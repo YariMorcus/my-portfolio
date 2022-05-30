@@ -6,7 +6,7 @@
 	.st0{fill:#3B4D4B;}
 	.st1{fill:#FFFFFF;}
 	.st2{fill:none;}
-	.st3{font-family:'Montserrat'; font-weight: bold; font-style: normal;}
+	.st3{font-family:'Montserrat', sans-serif; font-weight: bold; font-style: normal;}
 	.st4{font-size:655.58px;}
 	.st5{fill:#007045;}
 </style>
