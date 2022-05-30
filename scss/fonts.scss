@@ -21,3 +21,13 @@ Primary use:    To separate all css font declarations from other css
     font-weight: 600;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('../fonts/montserrat-bold.woff2') format('woff2'),
+        url('../fonts/montserrat-bold.woff') format('woff'),
+        url('../fonts/montserrat-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
