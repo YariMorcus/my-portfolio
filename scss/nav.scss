@@ -1,0 +1,240 @@
+/*------------------------------------------------------------------
+[Navigation component]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate all navigation css declarations based on component
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+    1. Logo
+    2. Navigation menu
+    3. Darkmode toggle
+    4. Media queries
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+1. Logo
+*/
+
+.brand__container {
+  @include desktop-minw-52em {
+    width: 28%;
+  }
+}
+
+.logo {
+  width: 100px;
+  pointer-events: none;
+  
+  @include desktop-minw-48em {
+    width: 120px;
+    margin-bottom: initial;
+  }
+
+  @include desktop-minw-64em {
+    width: 110px;
+  }
+}
+
+/*------------------------------------------------------------------
+1. Navigation menu
+*/
+
+#menu {
+  -webkit-transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  -ms-transition: height 0.5s;
+  transition: height 0.5s;
+  background: #00c177;
+  box-shadow: 0px 1px 10px 0px lightgrey;
+
+  .pure-menu-heading {
+    padding: .5rem 1rem;
+    // padding: .5rem 0;
+
+    @include desktop-minw-35em {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @include desktop-minw-48em {
+      padding: .5rem 0;
+  }
+
+  & .pure-menu {
+
+    @include desktop-minw-48em {
+      text-align: center;
+    }
+
+    @include desktop-minw-64em {
+      text-align: right;
+    }
+
+    & .pure-menu-list {
+      text-align: center;
+
+      @include desktop-minw-64em {
+        padding-right: 1rem;
+      }
+
+      & .active {
+        position: relative;
+        font-weight: 600;
+        border-radius: 12px;
+        background: #fff;
+
+        & > a {
+          color: #000;
+        }
+      }
+    }
+
+    & .pure-menu-link {
+      color: #000;
+
+      @include desktop-minw-73em {
+        padding: .5em 2em;
+      }
+
+      @include desktop-minw-64em {
+        padding: .5em 1.5em;
+      }
+
+      @include desktop-maxw-48em {
+        padding: .8rem;
+      }
+    }
+  }
+  
+  & .link-menu {
+    margin-top: 1rem;
+    display: flex;
+    @include f-align(center);
+    text-align: right;
+    color: map-get($colors, menu-link-color);
+
+    @include desktop-minw-48em {
+      margin-top: 0;
+    }
+
+    @include desktop-minw-52em {
+      width: 70%;
+    }
+
+    @include desktop-maxw-48em {
+      @include f-just(center);
+    }
+  }
+}
+
+.pure-menu-item.active>.pure-menu-link:hover,
+.pure-menu-item.active>.pure-menu-link:focus {
+  border-radius: 12px;
+  
+  @include desktop-minw-48em {
+    border-bottom: 4px solid #4d4d4d;
+  }
+
+  &.darkmode-menu-link {
+    border-bottom-color: #fff;
+  }
+}
+
+.pure-menu-active>.pure-menu-link, 
+.pure-menu-link:focus, .pure-menu-link:hover {
+  border-radius: 12px;
+}
+
+.darkmode-bg .pure-menu-link:focus {
+  background-color: initial !important;
+}
+
+/*------------------------------------------------------------------
+3. Darkmode toggle
+*/
+
+.custom-toggle {
+  position: absolute;
+  top: 1.3rem;
+  right: 1rem;
+  display: none;
+  width: 57px;
+  height: 50px;
+  background: #007045;
+  border-radius: 4px;
+
+  & .bar {
+    background-color: #fff;
+    display: block;
+    width: 40px;
+    height: 3px;
+    border-radius: 100px;
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+}
+
+.custom-toggle .bar:first-child {
+  -webkit-transform: translateY(-6px);
+  -moz-transform: translateY(-6px);
+  -ms-transform: translateY(-6px);
+  transform: translateY(-6px);
+}
+
+.custom-toggle.x .bar {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+
+  &.bar:first-child {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+/*------------------------------------------------------------------
+4. Media queries
+*/
+
+@media (max-width: 48em) {
+  nav {
+    overflow: hidden;
+   
+    &.open {
+      height: 28em;
+    }
+  }
+
+  .custom-menu-3 {
+    text-align: left;
+  }
+
+  .custom-toggle {
+    display: block;
+  }
+}
+
+@include desktop-maxw-47em {
+  nav {
+    height: 5.5em;
+  }
+}
+
+@media (min-width: 48em) {
+  .custom-toggle {
+    display: none;
+  }
+}

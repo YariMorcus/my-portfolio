@@ -1,0 +1,23 @@
+/*------------------------------------------------------------------
+[Fonts]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate all css font declarations from other css
+-------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('../fonts/montserrat-medium-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-medium-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}

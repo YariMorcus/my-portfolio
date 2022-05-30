@@ -1,0 +1,8 @@
+.idea/
+.sass-cache/
+.vscode/
+node_modules/
+slick/
+.git-old/
+email-signature.html
+projects copy.html

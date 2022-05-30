@@ -1,0 +1,322 @@
+/*------------------------------------------------------------------
+[Main stylesheet]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    Include all other components etc. in one stylesheet for production
+-------------------------------------------------------------------*/
+
+// Import stylesheets
+@import "assets";
+@import "fonts";
+@import 'animations';
+@import "variables";
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+html,
+button,
+input,
+select,
+textarea
+p,
+.pure-g [class *="pure-u"] {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100%;
+  font-weight: 400;
+  color: #332e2e;
+}
+
+p {
+  white-space: pre-line;
+  line-height: 1.5;
+
+  & li {
+    font-size: 1rem;
+  }
+}
+
+.darkmode-bg a:focus,
+.darkmode-bg button:focus {
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+
+p a {
+  font-weight: bold;
+  color: #000;
+}
+
+a {
+  text-underline-offset: 5px;
+  text-decoration-color: $main-background-color;
+  text-decoration-thickness: 2px;
+}
+
+a,
+button,
+.languages__container object {
+  border: 2px solid transparent;
+}
+
+a:focus,
+button:focus {
+  outline: none;
+  border: 2px solid #000;
+  border-radius: 4px;
+}
+
+.darkmode-bg a,
+.darkmode-bg button,
+.darkmode-bg .modal__fun-fact {
+  border: 2px solid transparent;
+}
+
+.darkmode-bg .fastlinks__box {
+  border: 2px solid transparent;
+}
+
+// Only used on projects page
+.white-focus-indicator:focus {
+  border: 1px solid #fff;
+}
+
+.fastlinks__container {
+
+  &.contact .fastlinks__a {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 100%;
+      color: #000;
+      border: 2px solid transparent;
+      border-radius: 16px;
+      text-decoration: none;
+
+      &:focus {
+        box-sizing: border-box;
+        border: 2px solid;
+      }
+  }
+
+  & a:focus   {
+    outline: none;
+    border: 2px solid;
+    border-radius: 16px;
+
+    .darkmode-bg & {
+      border: 2px solid #fff;
+    }
+  }
+}
+
+ul {
+  word-break: break-word;
+}
+
+a[class^="material"] {
+  font-size: 48px;
+  color: initial;
+  border-bottom: none;
+}
+
+.pure-g {
+  position: relative;
+}
+
+.pure-g.col-3 {
+  display: inline-block;
+  margin: 0 3rem;
+  padding: 1rem;
+  width: 30%;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0px 1px 10px 0px lightgrey;
+
+  @include desktop-maxw-48em {
+    margin: 1rem;
+    width: 100%;
+  }
+
+  &>.pure-u-6-12:first-of-type {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.container {
+  padding: 0 2rem;
+  background: #fff;
+}
+
+.container-w-bg {
+  padding: 2rem;
+  background: white;
+  border: 1px solid #E2E2E2;
+  border-radius: 1rem;
+}
+
+.container__center {
+  justify-content: space-evenly;
+
+  @include support-ie10 {
+    justify-content: center;
+  }
+}
+
+.center__box {
+  @include f-just(center);
+  margin: 40px 0;
+  padding: 1rem 3rem;
+  letter-spacing: 0;
+
+  @include desktop-maxw-47em {
+    padding: 1rem 2rem;
+  }
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+// Import css navigation
+@import "nav";
+
+// Import css header
+@import "header";
+
+// Import css headings
+@import 'headings';
+
+// Import all the page modules
+@import 'page_modules/index';
+@import 'page_modules/about';
+@import 'page_modules/education';
+@import 'page_modules/projects';
+@import 'page_modules/contact';
+
+.accessibility {
+  display: block;
+  margin-bottom: 1rem;
+  padding: .5rem;
+  font-weight: bold;
+  border: 1px solid rgb(253, 181, 21);
+
+  @include desktop-minw-64em {
+    display: initial;
+  }
+}
+
+// Screen readers ONLY
+.sr-only {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-main {
+  position: absolute;
+  top: auto;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+  text-decoration-color: #fff;
+
+  &:focus {
+    position: relative;
+    top: auto; 
+    left: auto;
+    display: block;
+    padding: .6rem;
+    width: 30%;
+    max-width: 250px;
+    height: auto;
+    border: 2px solid #000;
+    border-radius: 0;
+    border-bottom-right-radius: 12px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007045;
+    overflow: auto;
+    z-index: 999;
+  }
+
+  &-content-container {
+    position: relative;
+    background: $main-background-color;
+    z-index: 9;
+  }
+
+  /* Added as a fix for NVDA screenreader.
+     Otherwise, NVDA users won't be able to focus the skip-main anchor
+
+     Exceptions: 
+        1. does work when user focuses address bar in browser first, and then
+           navigates to skip main anchor
+  */
+  &-content-span {
+    display: block;
+    height: 0;
+  }
+}
+
+.darkmode-bg .skip-main:focus {
+    border: 2px solid #fff;
+    border-radius: 0;
+    border-bottom-right-radius: 12px; 
+}
+
+// Import footer
+@import 'footer';
+
+.link {
+  margin: 1rem auto;
+  text-align: center;
+  width: 50%;
+
+  .project__explanation & {
+    margin-bottom: 0;
+    padding: .5rem;
+    background: #fff;
+    line-height: 40px;
+    border-radius: 12px;
+    
+    @include desktop-minw-64em {
+      width: 85%;
+      height: 40px;
+    }
+    
+    @include desktop-minw-76em {
+      width: 70%;
+    }
+  }
+
+  @include desktop-maxw-64em {
+    width: 75%;
+  }
+
+  & a {
+    @include fontSize(21px);
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+
+@import 'darkmode';

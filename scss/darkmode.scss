@@ -1,0 +1,149 @@
+/*------------------------------------------------------------------
+[Darkmode CSS]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate all darkmode css declarations
+-------------------------------------------------------------------*/
+
+.darkmode {
+    &-bg {
+        background: #121212 !important;
+        color: hsl(0deg 0% 87%);
+
+        & .skip-main-content-container {
+            background: #242424;
+        }
+    }
+
+    &-03dp {
+        background: #242424 !important;
+        color: #dedede;
+
+        &.course__content,
+        &.tools__row > a,
+        &.internship__content a {
+            background: none !important;
+        }
+        
+    }
+
+    &-surface,
+    &-surface a {
+        color: #dedede !important;
+        background: #1D1D1D !important;
+        border: 1px solid transparent;
+    }
+
+    &-menu-link {
+        color: #dedede !important;
+        border: 2px solid transparent;
+
+        &:hover {
+            background: #373737;
+
+            .active &:hover {
+                background: #008074;
+            }
+        }
+    }
+
+    &-primary {
+        background-color: #008074 !important;
+
+        // Prevent link in .project_explanation to be the same as the background
+        .project__explanation & {
+            background: #fff !important;
+        }
+
+        &.fastlinks__box {
+            text-decoration-color: #fff;
+        }
+    }
+
+    &-titles {
+        background: #242424;
+        border: 1px solid #242424;
+        color: #dedede;
+
+        &::before {
+            position: initial;
+        }
+    }
+
+    // color: white;
+    &-subtitle {
+        color: #dedede;
+    }
+
+    // color: black;
+    &-cblack {
+        color: #000;
+    }
+    &-cwhite {
+        color: #dedede !important;
+    }
+
+    // font-weight: normal;
+    &-fnormal {
+        font-weight: normal;
+    }
+}
+
+// Only applies when 
+.container-w-bg.darkmode-surface {
+    border: none;
+}
+
+.a__link.darkmode-cwhite {
+    color: #dedede;
+    font-weight: normal;
+}
+
+.characteristics__container .darkmode-titles {
+    background: none;
+    border: none;
+}
+
+.pr-text-container.darkmode-surface {
+    border: 0;
+}
+
+.darkmode-bg .modal__header {
+    background: initial;
+    box-shadow: initial;
+}
+
+.darkmode__toggle {
+    margin-top: .7rem;
+    padding: .5rem;
+    color: #dedede;
+    font-size: 1.5rem;
+    background: #007045;
+    width: 41px;
+    height: 56px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+
+    @include desktop-minw-48em {
+        margin-top: 0;
+    }
+}
+
+.darkmode-bg .darkmode__toggle {
+    border: 2px solid transparent;  
+}
+
+.about-me__text.darkmode-surface {
+    padding: 1.5rem;
+
+    @include desktop-minw-48em {
+        padding: 2.25rem 3.25rem;
+    }
+}
+
+.self__education .darkmode-titles {
+    background: initial;
+    border: initial;
+}

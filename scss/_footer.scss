@@ -1,0 +1,65 @@
+/*------------------------------------------------------------------
+[Footer component]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate all footer css declarations based on component
+-------------------------------------------------------------------*/
+
+footer {
+    margin-top: auto;
+    padding: 1rem 0;
+    text-align: center;
+    background: $footer-background-color;
+
+    & .icon {
+        margin: 0 5px;
+        color: #ff0000;
+    }
+
+    @include desktop-minw-35em {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.footer__linkedin {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    margin-top: -15px;
+    width: auto;
+
+    @include desktop-maxw-35em {
+        position: initial;
+        margin: 0 auto;
+    }
+
+    > a {
+        display: flex;
+    }
+}
+
+.footer .footer__madeby {
+    color: #000;
+}
+
+.linkedin__link {
+    display: inline-block;
+    margin-left: -2px; // restore space between text, because of 2px border (otherwise space between two words isn't equal as others)
+    border: 2px solid transparent;
+    text-decoration: none;
+    color: #000;
+
+    &:focus {
+        border: 2px solid #fff;
+    }
+}
+
+.footer__linkedin img {
+    width: 30px;
+
+    @include desktop-maxw-35em {
+        width: 40px;
+    }
+}

@@ -1,0 +1,18 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 23 | /   @include desktop-minw-52em {
+ * 24 | |     width: 28%;
+ * 25 | \   }
+ *    '
+ *   scss\nav.scss 23:3  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 23 \2502  \250c    @include desktop-minw-52em {\a 24 \2502  \2502      width: 28%;\a 25 \2502  \2514    }\a    \2575 \a   scss\\nav.scss 23:3  root stylesheet";
+}

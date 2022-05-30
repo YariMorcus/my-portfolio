@@ -1,0 +1,312 @@
+/*------------------------------------------------------------------
+[Projects page stylesheet (module)]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate all css declarations based on page
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+    1. Global
+    2. Introduction
+    3. Fictional projects
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+1. Global
+This section ONLY contains CSS declarations which have been applied to more
+than one section
+*/
+
+object {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+dt {
+    font-weight: 700;
+
+    &::after {
+        content: ': ';
+    }
+}
+
+dd:first-of-type {
+    margin-bottom: 16px !important;
+}
+
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+.w-50 {
+    @include desktop-minw-64em {
+        width: 50%;
+    }
+}
+
+.project__container {
+    margin-top: 4rem;
+}
+
+.project__col__left,
+.project__col__right {
+    box-sizing: border-box;
+}
+
+.projects__title__container {
+    @include desktop-minw-31em {
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    @include desktop-minw-64em {
+        position: relative;
+    }
+}
+
+.projects__h2 {
+    padding: 1rem;
+    text-align: center;
+    border-radius: 12px;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='black' stroke-width='2' stroke-dasharray='19' stroke-dashoffset='15' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+.pulse {
+    display: none;
+
+    @include desktop-minw-35em {
+        position: absolute;
+        left: 50%;
+        width: 40px;
+        margin-top: -4rem;
+        height: 40px;
+        display: inline-block;
+        border-radius: 100%;
+        background: $main-background-color;
+        transform: translateX(-50%);
+    
+        &::after {
+            position: inherit;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            background: $main-hover-color;
+            animation: pulse 3s ease infinite;
+            content: '';
+        }
+    }
+
+}
+.category__explanation,
+.project__col__right {
+    background: $main-background-color;
+    box-shadow: 10px 10px 10px lightgrey;
+}
+
+.category__explanation.darkmode-cblack,
+.project__col__right.darkmode-cblack{
+    box-shadow: none;
+}
+
+.category__explanation {
+    padding: 1.5rem;
+    color: #fff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+    @include desktop-minw-64em {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 12px;
+    }
+}
+
+.project__col__right {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    @include desktop-minw-64em {
+        padding: 1.5rem;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        border-bottom-left-radius: 0;
+    }
+}
+
+.logo__container {
+    // display: flex;
+    // flex-direction: column;
+    padding: 0 1.5rem 1.5rem;
+    
+    @include desktop-minw-48em {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-flow: dense;
+        gap: 10px;
+    }
+
+    @include desktop-minw-64em {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: .5rem 1.5rem;
+        text-align: initial;
+    }
+}
+
+.logo-customers {
+    margin: 0 auto;
+}
+
+.bg__white {
+    background: #fff;
+}
+
+.logo__project {
+    position: relative;
+    margin-bottom: .5rem;
+    padding: 1rem;
+    display: inline-flex;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    align-items: center;
+    z-index: 1;
+
+    @include desktop-minw-64em {
+        margin-bottom: 0;
+
+        &:nth-child(odd) {
+            margin-bottom: 1rem;
+
+            @include desktop-minw-64em {
+                margin-bottom: initial;
+            }
+        }
+    }
+
+    & > object {
+        position: relative;
+        display: flex;
+        align-items: center;
+        z-index: -1;
+    }
+}
+
+// .overlay is used as Firefox fix
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    opacity: 0;
+}
+
+.project__explanation {
+    display: none;
+    padding: 1.5rem;
+    color: initial;
+    background: #8daaa8;
+
+    & p {
+        white-space: normal;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    & a {
+        color: #000;
+        text-decoration-color: #fff;
+        text-underline-offset: 3px;
+    }
+
+    &.active {
+        grid-column: 1 / 3;
+        margin: 0 -1.5rem .5rem;
+
+        @include desktop-minw-64em {
+            margin-bottom: 0;
+        }
+
+        @include desktop-minw-35em {
+            margin-top: initial;
+            margin-right: initial;
+            margin-left: initial;
+        }
+    }
+
+    & li {
+        text-align: left;
+      }
+
+    &:not(:nth-last-child(-n+2)) {
+        margin-bottom: 1rem;
+    }
+
+    @include desktop-minw-48em {
+        padding: 2rem;
+    }
+
+    @include desktop-minw-64em {
+        border-radius: 12px;
+    }
+}
+
+.border-radius-bottom-left {
+    border-bottom-left-radius: 0px;
+    animation: wobble 20ms forwards;
+}
+
+@keyframes wobble {
+    100% {
+        border-bottom-left-radius: 12px;
+    }
+}
+
+/*------------------------------------------------------------------
+2. Introduction
+*/
+
+.introduction__paragraph {
+    width: 740px;
+}
+
+.label__fictional::before {
+    @extend %label__alignment;
+}
+
+.label__customers::before {
+    @extend %label__alignment;
+}
+
+[data-content="person-outline"]::before {
+    content: url(../img/icon/person-outline.svg);
+}
+
+[data-content="people-outline"]::before {
+    content: url(../img/icon/people-outline.svg);
+}
+
+[data-content="person-outline-white"]::before {
+    content: url(../img/icon/person-outline-white.svg);
+}
+
+[data-content="people-outline-white"]::before {
+    content: url(../img/icon/people-outline-white.svg);
+}
+
+/*------------------------------------------------------------------
+3. Fictional projects
+*/
+
+.custom-project-label-1 {
+    margin: 0 auto;
+    color: hsl(216deg, 12%, 8%);
+    font-size: 1.3rem;
+    font-weight: bold;    
+}

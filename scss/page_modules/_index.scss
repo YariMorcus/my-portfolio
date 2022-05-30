@@ -1,0 +1,206 @@
+/*------------------------------------------------------------------
+[Homepage stylesheet (module)]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate all css declarations based on page
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+    1. Introduction
+    2. Fast links
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+1. Introduction
+*/
+
+.homepage {
+    justify-content: center;
+    background-image: url(../img/background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.box-shadow {
+    @extend %box__shadow--large;
+}
+
+.home {
+    justify-content: center;
+    
+    & .pure-u-1.pure-u-md-14-24 {
+        position: relative;
+        padding: 2rem;
+        background: #fff;
+        
+        @include desktop-minw-73em {
+            flex-grow: 1;
+        }
+    }
+
+    & h1 {
+        all: inherit;
+        position: relative;
+        padding: 0;
+        font-family: "Montserrat";
+        font-size: 2rem;
+        font-weight: 600;
+    }
+}
+
+.introduction {
+    border: 1px solid transparent;
+}
+
+.icons__container {
+    display: flex;
+    justify-content: flex-end;
+
+    & > a {
+        @extend %flex-align-center;
+    }
+
+    & > a:last-of-type {
+        margin-left: 2rem;
+    }
+}
+
+.icons {
+    position: absolute;
+    left: 3rem;
+    padding: 4px;
+
+    @include desktop-maxw-48em {
+        position: initial;
+        display: flex;
+        margin: 0 auto;
+        width: 50%;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    &.home {
+        position: initial;
+        width: 50px;
+    }
+}
+
+.github__icon__svg {
+    pointer-events: none;
+}
+
+/*------------------------------------------------------------------
+2. Fast links
+*/
+
+.fastlinks__container {
+    margin: 3rem auto;
+    justify-content: space-between;
+    width: 80%;
+
+    &.home {
+        @include desktop-minw-64em {
+            width: 85%;
+            max-width: 1200px;
+        }
+    }
+
+    &.contact {
+        @include desktop-minw-48em {
+            width: 750px;
+        }
+
+        @include desktop-minw-76em {
+            width: 100%;
+        }
+    }
+}
+
+.fastlinks__box {
+    padding: 1rem .2rem;
+    background: $main-background-color;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    @extend %box__shadow;
+
+    .home &:nth-child(-n+2) {
+        @include desktop-minw-48em {
+            margin-bottom: 1rem;
+        }
+
+        @include desktop-minw-64em {
+            margin-bottom: 0;
+        }
+    }
+
+    .contact & {
+        position: relative;
+        @extend %flex-align-center;
+
+        @include desktop-minw-48em {
+            margin-right: auto;
+            margin-left: auto;
+        }
+        
+        @include desktop-minw-48em {
+            width: 250px;
+            height: 200px;
+        }
+    }
+
+    .contact &:nth-child(1) {
+        margin-top: 2rem;
+
+        @include desktop-minw-48em {
+            margin-top: initial;
+            margin-bottom: initial;
+        }
+    }
+
+    .contact &:nth-child(-n+2) {
+        margin-bottom: 6rem;    
+    }
+    
+    @include desktop-maxw-47em {
+        margin-bottom: 2rem;
+    }
+}
+
+
+.fastlinks__imgbox {
+    display: flex;
+    margin: 0 auto;
+    width: 100px;
+    height: 105px;
+
+    .contact .fastlinks__box:nth-child(2) & {
+        margin-top: 3rem;
+
+        @include desktop-minw-31em{
+            margin-top: 1.3rem;
+        }
+
+        @include desktop-minw-64em {
+            margin-top: 0;
+        }
+    }
+    .contact .fastlinks__box:nth-child(3) & {
+        margin-top: 2rem;
+
+        @include desktop-minw-31em{
+            margin-top: 0;
+        }
+    }
+}
+
+.fastlinks__text {
+    margin-top: 3rem;
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 1.3rem;
+    text-align: center;
+}

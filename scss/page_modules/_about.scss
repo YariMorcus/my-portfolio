@@ -1,0 +1,434 @@
+/*------------------------------------------------------------------
+[About me page stylesheet (module)]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate all css declarations based on page
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+    1. Global
+    2. Introduction
+    3. Personal info
+    4. Modal
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+1. Global
+This section ONLY contains CSS declarations which have been applied to more
+than one section
+*/
+
+.center__box > div {
+    box-sizing: border-box;
+}
+
+/*------------------------------------------------------------------
+2. Introduction
+This section ONLY contains CSS declarations which have been applied to more
+than one section
+*/
+
+.introduction__about-me {
+    /* Box model */
+    margin-top: 1rem;
+    margin-bottom: -40px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.photo__student {
+    /* Box model */
+    margin: 0;
+
+    & > img {
+        /* Box model */
+        margin: 0 auto;
+    }
+
+    &--caption {
+        /* Box model */
+        margin: 0 auto;
+        padding: 1rem;
+        max-width: 100%;
+
+        /* Typography */
+        font-family: "Montserrat";
+        text-align: center; 
+        font-weight: 600;
+        color: initial;
+        
+        /* Visual */
+        background-color: $light-yellow-color
+    }
+
+    @include desktop-maxw-48em {
+        & img {
+            /* Box model */
+            margin: 0 auto;
+        }
+    }
+}
+
+.status__outline {
+    /* Positioning */
+    position: relative;
+    z-index: 0;
+
+    /* Box model */
+    margin: 0 auto;
+    padding: .3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* Visual */
+    border-radius: 100%;
+
+    /* Misc */
+    overflow: hidden;
+  
+    @include desktop-minw-23em {
+      /* Box model */
+      width: 300px;
+      height: 300px;
+    }
+  
+    @include desktop-minw-48em {
+      /* Box model */
+      padding: .3rem;
+      height: 100%;
+    }
+  
+    @include desktop-minw-52em {
+        /* Box model */
+        width: fit-content;
+    }
+  
+    @include desktop-minw-73em {
+        /* Box model */
+        margin-left: auto;
+        width: 300px;
+        height: 300px;
+    }
+  
+    &::before {
+        /* Positioning */
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+
+        /* Box model */
+        width: 100%;
+        height: 100%;
+
+        /* Visual */
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: 80% 80%, 80% 80%;
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        background-image: linear-gradient($light-yellow-color, $light-yellow-color), linear-gradient(transparent, transparent), linear-gradient($light-yellow-color, $light-yellow-color),
+        linear-gradient(transparent, transparent);
+        animation: rotate 5s linear infinite;
+
+        /* Misc */
+        content: "";
+    }
+  
+      &:focus {
+          /* Visual */
+          border-radius: 100%;
+      }
+  
+      .darkmode-bg &:focus {
+          /* Visual */
+          border-radius: 100%;
+      }
+}
+
+.rounded__photo {
+    /* Visual */
+    border-radius: 100%;
+
+    &--caption {
+        /* Box model */
+        box-sizing: border-box;
+        margin-bottom: 32px;
+        width: 316px;
+        max-width: 100%;
+
+        /* Visual */
+        background: $light-yellow-color;
+        @extend %border-radius-16;
+    }
+}
+
+/* For testing https://stackoverflow.com/questions/59348841/make-round-divs-change-color-on-hover */
+.rounded__photo {
+    /* Positioning */
+    position: relative;
+
+    /* Box model */
+    box-sizing: border-box;
+
+    /* Visual */
+    background: none;
+    border: 3px solid $main-color;
+
+    /* Misc */
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        /* Positioning */
+        position: absolute;
+
+        /* Box model */
+        box-sizing: inherit;
+        width: 100%;
+        height: 100%;
+        
+        /* Misc */
+        content: '';
+    }
+}
+
+.about-me__text {
+    @extend %border-radius-16;
+
+    @include desktop-minw-35em {
+        padding: 1rem;
+        border: 20px solid $main-background-color;
+    }
+
+    @include desktop-minw-48em {
+        margin-left: 2rem;
+        padding-right: 2rem;
+        padding-left: 2rem;
+
+        &.darkmode-surface {
+            padding: 2.25rem 3.25rem;
+        }
+    }
+
+    @include desktop-minw-80em {
+        margin-left: initial;
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+/*------------------------------------------------------------------
+3. Personal info
+This section ONLY contains CSS declarations which have been applied to more
+than one section
+*/
+
+.personal--info__container {
+    justify-content: space-around;
+}
+
+.about-me__info {
+
+    &__container {
+        padding: 1rem 2rem;
+        height: intrinsic; /* Safari/WebKit uses a non-standard name */
+        height: -webkit-max-content; /* Chrome */         
+        height: -moz-max-content; /* Firefox/Gecko */    
+        height: max-content;
+        @extend %border-radius-16;
+        @extend %box__shadow;
+        background-color: $main-background-color;
+        font-weight: bold !important;
+        color: #fff !important;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__header {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    &__title {
+        color: #fff;
+    }
+
+    &__list-item:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}
+
+.redhead__icon,
+.dutch-flag__icon,
+.screen__icon {
+    position: relative;
+}
+
+.dutch-flag__icon,
+.screen__icon {
+    list-style: none;
+}
+
+.redhead__icon::before,
+.dutch-flag__icon::before,
+.screen__icon::before {
+    position: absolute;
+}
+
+.redhead__icon:hover::after,
+.dutch-flag__icon:hover::after,
+.screen__icon:hover::after {
+    position: absolute;
+    top: 17px;
+    padding: .2rem .4rem;
+    font-size: 12px;
+    color: lightgrey;
+    background: #000;
+    border: 1px solid #fff;
+    z-index: 1000;
+    width: intrinsic; /* Safari/WebKit uses a non-standard name */
+    width: -webkit-max-content; /* Chrome */
+    width: -moz-max-content; /* Firefox/Gecko */
+    width: max-content;
+}
+
+.redhead__icon {
+    &:hover::after {
+        position: absolute;
+        content: attr(data-title-hair);
+    }
+    &::before {
+        content: url(../img/icon/redhead-emoji.svg);
+        top: -7px;
+        left: -2.3rem;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.dutch-flag__icon {
+    &:hover::after {
+        content: attr(data-title-flag);
+    }
+    &::before {
+    content: url(../img/icon/dutch-flag.svg);
+    }
+}
+
+.screen__icon {
+    &:hover::after {
+        content: attr(data-title-screen);
+    }
+    &::before {
+        content: url(../img/icon/screen.svg);
+    }
+}
+
+.dutch-flag__icon::before,
+.screen__icon::before {
+    top: -4px;
+    left: -5px;
+    width: 50px;
+    height: 50px;
+}
+
+.about-me__sidenote {
+    font-size: .9em;
+}
+
+.two-by-one__column:nth-child(n+1) {
+    @include desktop-minw-48em {
+        flex-basis: 48%;
+    }
+
+    @include desktop-minw-64em {
+        flex-basis: initial;
+    }
+}
+
+.about-me__ul--location {
+    padding-left: 0;
+    text-align: center;
+
+    & > li {
+        margin: 0 auto 2rem;
+        padding-left: 2rem;
+
+        @include desktop-minw-23em {
+            width: 200px;
+        }
+        
+    }
+}
+
+.list-item__emoji {
+    margin-top: -10px;
+}
+
+/*------------------------------------------------------------------
+4. Modal
+This section ONLY contains CSS declarations which have been applied to more
+than one section
+*/
+
+#modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: $footer-background-color;
+    z-index: 10;
+}
+
+.modal {
+
+    &__header {
+        padding: 3rem 0;
+        background: $footer-background-color;
+    }
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 100%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+    }
+
+    &__close {
+        display: block;
+        margin-right: 3rem;
+        margin-left: auto;
+        padding: 0 1rem;
+        color: white;
+        font-size: 2rem;
+        border: 2px solid #000;
+        border-radius: 12px;
+        background: $main-background-color;
+
+        &:focus {
+            border: 2px solid #fff;
+            border-radius: 12px;
+
+            .darkmode-bg & {
+                border-radius: 12px;
+            }
+        }
+    }
+
+    &__fun-fact {
+        padding: 0 1rem;
+        font-size: 2rem;
+    }
+}

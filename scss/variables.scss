@@ -1,0 +1,73 @@
+/*------------------------------------------------------------------
+[Variables stylesheet]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    Separate all variables into one stylesheet
+-------------------------------------------------------------------*/
+
+// Define colors
+$main-color: #000;
+$main-blue-color: #009bb4;
+$main-background-color: #00c177;
+$grey-transparent-bg: rgba(112 114 114 / 20%);
+$footer-background-color: rgb(117, 153, 150);
+$main-hover-color: #378b37;
+$green-border-color: #568040;
+$light-yellow-color: #F8DE7E;
+$desaturated-cyan: #759996;
+
+$colors: (
+  menu-link-color: black
+);
+
+// Define box shadow
+%box__shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+// Box shadow large
+%box__shadow--large {
+  -webkit-box-shadow: 36px 49px 103px -35px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 36px 49px 103px -35px rgba(0, 0, 0, 0.75);
+  box-shadow: 36px 49px 103px -35px rgba(0, 0, 0, 0.75);
+}
+
+// display: flex; justify-content: center;
+%flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+// Vertical align center flexbox
+%flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+// Left and right side half circle
+%circle__size--half {
+  width: 156px;
+  height: 312px;
+}
+
+// Circle
+%circle__size {
+  width: 264px;
+  height: 264px;
+}
+
+// .label__fictional, .label__customers
+%label__alignment {
+  display: inline-block;
+  margin-right: .3rem;
+  width: 20px;
+}
+
+%main-border {
+  border: 3px solid $main-background-color;
+}
+
+%border-radius-16 {
+  border-radius: 16px;
+}
