@@ -1,2 +1,3 @@
-# portfolio
-The goal of this repository is to host the personal portfolio of Yari Morcus.
+# Portfolio of Yari Morcus
+
+You can [visit my portfolio ](https://yarimorcus.github.io/my-portfolio/) for more information.
