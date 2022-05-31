@@ -15,6 +15,9 @@ Primary use:    To separate all navigation css declarations based on component
 
 -------------------------------------------------------------------*/
 
+@use 'assets' as *;
+@use 'variables' as *;
+
 /*------------------------------------------------------------------
 1. Logo
 */
@@ -214,7 +217,7 @@ Primary use:    To separate all navigation css declarations based on component
     overflow: hidden;
    
     &.open {
-      height: 28em;
+      height: 28rem;
     }
   }
 
@@ -229,12 +232,26 @@ Primary use:    To separate all navigation css declarations based on component
 
 @include desktop-maxw-47em {
   nav {
-    height: 5.5em;
+    height: 5.5rem;
   }
 }
 
 @media (min-width: 48em) {
   .custom-toggle {
     display: none;
+  }
+}
+
+/* CSS specific to iOS devices */ 
+@supports (-webkit-touch-callout: none) { 
+
+  @media screen and (orientation: landscape) {
+    .logo {
+      margin-top: -2.5rem; // Otherwise logo isn't visible
+    }
+
+    nav.open {
+      height: 31rem; // Otherwise darkmode toggle button isn't visible
+    }
   }
 }
