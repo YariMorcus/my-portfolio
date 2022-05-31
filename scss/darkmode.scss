@@ -6,6 +6,8 @@ Assigned to:    Yari Morcus
 Primary use:    To separate all darkmode css declarations
 -------------------------------------------------------------------*/
 
+@import 'assets';
+
 .darkmode {
     &-bg {
         background: #121212 !important;
