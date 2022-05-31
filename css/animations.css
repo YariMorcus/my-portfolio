@@ -1,1 +1,22 @@
-@-webkit-keyframes pulse{0%{opacity:1;transform:scale(1)}50%{opacity:0;transform:scale(1.5)}100%{opacity:0;transform:scale(1)}}/*# sourceMappingURL=animations.css.map */
+/*------------------------------------------------------------------
+[Animations]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate animation CSS from other CSS
+                Animation can be found on projects page
+-------------------------------------------------------------------*/
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}

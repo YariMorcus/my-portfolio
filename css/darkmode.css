@@ -1,18 +1,131 @@
-/* Error: Undefined mixin.
- *     ,
- * 129 | /     @include desktop-minw-48em {
- * 130 | |         margin-top: 0;
- * 131 | \     }
- *     '
- *   scss\darkmode.scss 129:5  root stylesheet */
+/*------------------------------------------------------------------
+[Darkmode CSS]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate all darkmode css declarations
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Functions and media queries]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate all functions and media queries from other CSS
+-------------------------------------------------------------------*/
+.darkmode-bg {
+  background: #121212 !important;
+  color: hsl(0deg, 0%, 87%);
+}
+.darkmode-bg .skip-main-content-container {
+  background: #242424;
+}
+.darkmode-03dp {
+  background: #242424 !important;
+  color: #dedede;
+}
+.darkmode-03dp.course__content, .darkmode-03dp.tools__row > a, .darkmode-03dp.internship__content a {
+  background: none !important;
+}
+.darkmode-surface, .darkmode-surface a {
+  color: #dedede !important;
+  background: #1D1D1D !important;
+  border: 1px solid transparent;
+}
+.darkmode-menu-link {
+  color: #dedede !important;
+  border: 2px solid transparent;
+}
+.darkmode-menu-link:hover {
+  background: #373737;
+}
+.active .darkmode-menu-link:hover:hover {
+  background: #008074;
+}
+.darkmode-primary {
+  background-color: #008074 !important;
+}
+.project__explanation .darkmode-primary {
+  background: #fff !important;
+}
+.darkmode-primary.fastlinks__box {
+  text-decoration-color: #fff;
+}
+.darkmode-titles {
+  background: #242424;
+  border: 1px solid #242424;
+  color: #dedede;
+}
+.darkmode-titles::before {
+  position: initial;
+}
+.darkmode-subtitle {
+  color: #dedede;
+}
+.darkmode-cblack {
+  color: #000;
+}
+.darkmode-cwhite {
+  color: #dedede !important;
+}
+.darkmode-fnormal {
+  font-weight: normal;
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a     \2577 \a 129 \2502  \250c      @include desktop-minw-48em {\a 130 \2502  \2502          margin-top: 0;\a 131 \2502  \2514      }\a     \2575 \a   scss\\darkmode.scss 129:5  root stylesheet";
+.container-w-bg.darkmode-surface {
+  border: none;
+}
+
+.a__link.darkmode-cwhite {
+  color: #dedede;
+  font-weight: normal;
+}
+
+.characteristics__container .darkmode-titles {
+  background: none;
+  border: none;
+}
+
+.pr-text-container.darkmode-surface {
+  border: 0;
+}
+
+.darkmode-bg .modal__header {
+  background: initial;
+  box-shadow: initial;
+}
+
+.darkmode__toggle {
+  margin-top: 0.7rem;
+  padding: 0.5rem;
+  color: #dedede;
+  font-size: 1.5rem;
+  background: #007045;
+  width: 41px;
+  height: 56px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
+@media screen and (min-width: 48em) {
+  .darkmode__toggle {
+    margin-top: 0;
+  }
+}
+
+.darkmode-bg .darkmode__toggle {
+  border: 2px solid transparent;
+}
+
+.about-me__text.darkmode-surface {
+  padding: 1.5rem;
+}
+@media screen and (min-width: 48em) {
+  .about-me__text.darkmode-surface {
+    padding: 2.25rem 3.25rem;
+  }
+}
+
+.self__education .darkmode-titles {
+  background: initial;
+  border: initial;
 }

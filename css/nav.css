@@ -1,18 +1,260 @@
-/* Error: Undefined mixin.
- *    ,
- * 23 | /   @include desktop-minw-52em {
- * 24 | |     width: 28%;
- * 25 | \   }
- *    '
- *   scss\nav.scss 23:3  root stylesheet */
+/*------------------------------------------------------------------
+[Functions and media queries]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate all functions and media queries from other CSS
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Variables stylesheet]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    Separate all variables into one stylesheet
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Navigation component]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate all navigation css declarations based on component
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Table of contents]
+    1. Logo
+    2. Navigation menu
+    3. Darkmode toggle
+    4. Media queries
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+1. Logo
+*/
+@media only screen and (min-width: 52.375em) {
+  .brand__container {
+    width: 28%;
+  }
+}
+
+.logo {
+  width: 100px;
+  pointer-events: none;
+}
+@media screen and (min-width: 48em) {
+  .logo {
+    width: 120px;
+    margin-bottom: initial;
+  }
+}
+@media screen and (min-width: 64em) {
+  .logo {
+    width: 110px;
+  }
+}
+
+/*------------------------------------------------------------------
+1. Navigation menu
+*/
+#menu {
+  -webkit-transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  -ms-transition: height 0.5s;
+  transition: height 0.5s;
+  background: #00c177;
+  box-shadow: 0px 1px 10px 0px lightgrey;
+}
+#menu .pure-menu-heading {
+  padding: 0.5rem 1rem;
+}
+@media screen and (min-width: 35.5em) {
+  #menu .pure-menu-heading {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 48em) {
+  #menu {
+    padding: 0.5rem 0;
+  }
+}
+@media screen and (min-width: 48em) {
+  #menu .pure-menu {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 64em) {
+  #menu .pure-menu {
+    text-align: right;
+  }
+}
+#menu .pure-menu .pure-menu-list {
+  text-align: center;
+}
+@media screen and (min-width: 64em) {
+  #menu .pure-menu .pure-menu-list {
+    padding-right: 1rem;
+  }
+}
+#menu .pure-menu .pure-menu-list .active {
+  position: relative;
+  font-weight: 600;
+  border-radius: 12px;
+  background: #fff;
+}
+#menu .pure-menu .pure-menu-list .active > a {
+  color: #000;
+}
+#menu .pure-menu .pure-menu-link {
+  color: #000;
+}
+@media screen and (min-width: 73.875em) {
+  #menu .pure-menu .pure-menu-link {
+    padding: 0.5em 2em;
+  }
+}
+@media screen and (min-width: 64em) {
+  #menu .pure-menu .pure-menu-link {
+    padding: 0.5em 1.5em;
+  }
+}
+@media screen and (max-width: 48em) {
+  #menu .pure-menu .pure-menu-link {
+    padding: 0.8rem;
+  }
+}
+#menu .link-menu {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: black;
+}
+@media screen and (min-width: 48em) {
+  #menu .link-menu {
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 52.375em) {
+  #menu .link-menu {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 48em) {
+  #menu .link-menu {
+    justify-content: center;
+  }
+}
+
+.pure-menu-item.active > .pure-menu-link:hover,
+.pure-menu-item.active > .pure-menu-link:focus {
+  border-radius: 12px;
+}
+@media screen and (min-width: 48em) {
+  .pure-menu-item.active > .pure-menu-link:hover,
+.pure-menu-item.active > .pure-menu-link:focus {
+    border-bottom: 4px solid #4d4d4d;
+  }
+}
+.pure-menu-item.active > .pure-menu-link:hover.darkmode-menu-link,
+.pure-menu-item.active > .pure-menu-link:focus.darkmode-menu-link {
+  border-bottom-color: #fff;
+}
+
+.pure-menu-active > .pure-menu-link,
+.pure-menu-link:focus, .pure-menu-link:hover {
+  border-radius: 12px;
+}
+
+.darkmode-bg .pure-menu-link:focus {
+  background-color: initial !important;
+}
+
+/*------------------------------------------------------------------
+3. Darkmode toggle
+*/
+.custom-toggle {
+  position: absolute;
+  top: 1.3rem;
+  right: 1rem;
+  display: none;
+  width: 57px;
+  height: 50px;
+  background: #007045;
+  border-radius: 4px;
+}
+.custom-toggle .bar {
+  background-color: #fff;
   display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 23 \2502  \250c    @include desktop-minw-52em {\a 24 \2502  \2502      width: 28%;\a 25 \2502  \2514    }\a    \2575 \a   scss\\nav.scss 23:3  root stylesheet";
+  width: 40px;
+  height: 3px;
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.custom-toggle .bar:first-child {
+  -webkit-transform: translateY(-6px);
+  -moz-transform: translateY(-6px);
+  -ms-transform: translateY(-6px);
+  transform: translateY(-6px);
+}
+
+.custom-toggle.x .bar {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.custom-toggle.x .bar.bar:first-child {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/*------------------------------------------------------------------
+4. Media queries
+*/
+@media (max-width: 48em) {
+  nav {
+    overflow: hidden;
+  }
+  nav.open {
+    height: 28rem;
+  }
+
+  .custom-menu-3 {
+    text-align: left;
+  }
+
+  .custom-toggle {
+    display: block;
+  }
+}
+@media only screen and (max-width: 47.9375em) {
+  nav {
+    height: 5.5rem;
+  }
+}
+@media (min-width: 48em) {
+  .custom-toggle {
+    display: none;
+  }
+}
+/* CSS specific to iOS devices */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (orientation: landscape) {
+    .logo {
+      margin-top: -2.5rem;
+    }
+
+    nav.open {
+      height: 31rem;
+    }
+  }
 }

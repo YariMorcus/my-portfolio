@@ -7,10 +7,10 @@ Primary use:    Include all other components etc. in one stylesheet for producti
 -------------------------------------------------------------------*/
 
 // Import stylesheets
-@import "assets";
-@import "fonts";
-@import 'animations';
-@import "variables";
+@use "assets" as *;
+@use "fonts" as *;
+@use "animations" as *;
+@use "variables" as *;
 
 html {
   height: 100%;
@@ -309,7 +309,7 @@ a[class^="material"] {
   }
 
   & a {
-    @include fontSize(21px);
+    font-size: 21px;
     text-decoration: none;
     color: #000;
   }

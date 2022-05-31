@@ -6,6 +6,8 @@ Assigned to:    Yari Morcus
 Primary use:    To separate all header css declarations based on component
 -------------------------------------------------------------------*/
 
+@use 'assets' as *;
+
 header div {
   justify-content: center;
   align-items: center;
@@ -14,7 +16,7 @@ header div {
     padding: 1rem;
     background: #f5f5f5 url(../img/home.jpg) center/cover no-repeat fixed;
 
-    @include desktop-maxw-48em {
+    assets.desktop-maxw-48em {
       padding: 2rem 0;
     }
   }

@@ -1,18 +1,25 @@
-/* Error: Undefined mixin.
- *    ,
- * 17 | /     @include desktop-maxw-48em {
- * 18 | |       padding: 2rem 0;
- * 19 | \     }
- *    '
- *   scss\header.scss 17:5  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 17 \2502  \250c      @include desktop-maxw-48em {\a 18 \2502  \2502        padding: 2rem 0;\a 19 \2502  \2514      }\a    \2575 \a   scss\\header.scss 17:5  root stylesheet";
+/*------------------------------------------------------------------
+[Functions and media queries]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate all functions and media queries from other CSS
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Header component]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    To separate all header css declarations based on component
+-------------------------------------------------------------------*/
+header div {
+  justify-content: center;
+  align-items: center;
+}
+header div + div.background {
+  padding: 1rem;
+  background: #f5f5f5 url(../img/home.jpg) center/cover no-repeat fixed;
+}
+header div + div.background assets.desktop-maxw-48em {
+  padding: 2rem 0;
 }

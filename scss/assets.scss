@@ -13,26 +13,6 @@ Primary use:    To separate all functions and media queries from other CSS
   align-items: $align;
 }
 
-@function toRem($size) {
-  $remSize: $size / 16px;
-  @return #{$remSize}rem;
-}
-
-@mixin fontSize($size) {
-  font-size: $size; // Fallback in px
-  font-size: toRem($size);
-}
-
-@function calcWidth($width) {
-  $remWidth: $width / 16px;
-  @return #{$remWidth}rem;
-}
-
-@function calcHeight($height) {
-  $remHeight: $height / 16px;
-  @return #{$remHeight}rem;
-}
-
 // Media queries
 
 @mixin landscape-orientation {
