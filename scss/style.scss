@@ -295,12 +295,8 @@ a[class^="material"] {
     border-radius: 12px;
     
     @include desktop-minw-64em {
-      width: 85%;
+      width: 88%;
       height: 40px;
-    }
-    
-    @include desktop-minw-76em {
-      width: 70%;
     }
   }
 

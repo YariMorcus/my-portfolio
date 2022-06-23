@@ -1755,6 +1755,7 @@ dd:first-of-type {
 }
 
 .logo__container {
+  margin-top: -1.5rem;
   padding: 0 1.5rem 1.5rem;
 }
 @media screen and (min-width: 48em) {
@@ -1767,9 +1768,9 @@ dd:first-of-type {
 }
 @media screen and (min-width: 64em) {
   .logo__container {
+    margin-top: initial;
     flex-direction: row;
     justify-content: space-around;
-    padding: 0.5rem 1.5rem;
     text-align: initial;
   }
 }
@@ -1851,7 +1852,6 @@ dd:first-of-type {
 }
 @media screen and (min-width: 35.5em) {
   .project__explanation.active {
-    margin-top: initial;
     margin-right: initial;
     margin-left: initial;
   }
@@ -2130,13 +2130,8 @@ footer .icon {
 }
 @media screen and (min-width: 64em) {
   .project__explanation .link {
-    width: 85%;
+    width: 88%;
     height: 40px;
-  }
-}
-@media screen and (min-width: 76.5em) {
-  .project__explanation .link {
-    width: 70%;
   }
 }
 @media screen and (max-width: 64em) {

@@ -138,6 +138,7 @@ dd:first-of-type {
 .logo__container {
     // display: flex;
     // flex-direction: column;
+    margin-top: -1.5rem;
     padding: 0 1.5rem 1.5rem;
     
     @include desktop-minw-48em {
@@ -148,9 +149,10 @@ dd:first-of-type {
     }
 
     @include desktop-minw-64em {
+        margin-top: initial;
         flex-direction: row;
         justify-content: space-around;
-        padding: .5rem 1.5rem;
+        // padding: .5rem 1.5rem;
         text-align: initial;
     }
 }
@@ -234,7 +236,7 @@ dd:first-of-type {
         }
 
         @include desktop-minw-35em {
-            margin-top: initial;
+            // margin-top: 8px;
             margin-right: initial;
             margin-left: initial;
         }
