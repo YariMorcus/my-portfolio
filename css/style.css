@@ -127,7 +127,7 @@ p li {
 
 .darkmode-bg a:focus,
 .darkmode-bg button:focus {
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   border-radius: 4px;
 }
 
@@ -138,8 +138,8 @@ p a {
 
 a {
   text-underline-offset: 5px;
-  text-decoration-color: #00c177;
-  text-decoration-thickness: 2px;
+  text-decoration-color: #fff;
+  text-decoration-thickness: 1px;
 }
 
 a,
@@ -351,7 +351,7 @@ Primary use:    To separate all navigation css declarations based on component
   -moz-transition: height 0.5s;
   -ms-transition: height 0.5s;
   transition: height 0.5s;
-  background: #00c177;
+  background-color: #fff;
   box-shadow: 0px 1px 10px 0px lightgrey;
 }
 #menu .pure-menu-heading {
@@ -390,10 +390,13 @@ Primary use:    To separate all navigation css declarations based on component
   position: relative;
   font-weight: 600;
   border-radius: 12px;
-  background: #fff;
+  background-color: #007045;
 }
 #menu .pure-menu .pure-menu-list .active > a {
-  color: #000;
+  color: #fff;
+}
+#menu .pure-menu .pure-menu-list .active > a:hover {
+  background-color: initial;
 }
 #menu .pure-menu .pure-menu-link {
   color: #000;
@@ -412,6 +415,12 @@ Primary use:    To separate all navigation css declarations based on component
   #menu .pure-menu .pure-menu-link {
     padding: 0.8rem;
   }
+}
+#menu .pure-menu .pure-menu-link:hover {
+  background-color: #cdcdcd;
+}
+#menu .pure-menu .pure-menu-link.darkmode-menu-link:hover {
+  background-color: #808080;
 }
 #menu .link-menu {
   margin-top: 1rem;
@@ -439,6 +448,7 @@ Primary use:    To separate all navigation css declarations based on component
 .pure-menu-item.active > .pure-menu-link:hover,
 .pure-menu-item.active > .pure-menu-link:focus {
   border-radius: 12px;
+  background-color: initial;
 }
 @media screen and (min-width: 48em) {
   .pure-menu-item.active > .pure-menu-link:hover,
@@ -458,6 +468,7 @@ Primary use:    To separate all navigation css declarations based on component
 
 .darkmode-bg .pure-menu-link:focus {
   background-color: initial !important;
+  border-radius: 12px;
 }
 
 /*------------------------------------------------------------------
@@ -470,7 +481,7 @@ Primary use:    To separate all navigation css declarations based on component
   display: none;
   width: 57px;
   height: 50px;
-  background: #007045;
+  background-color: #007045;
   border-radius: 4px;
 }
 .custom-toggle .bar {
@@ -563,15 +574,16 @@ Version:    1.0
 Assigned to:    Yari Morcus
 Primary use:    To separate all header css declarations based on component
 -------------------------------------------------------------------*/
-header div {
+header > div {
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 10px 15px 5px rgba(119, 118, 118, 0.69);
 }
-header div + div.background {
+header > div + div.background {
   padding: 1rem;
   background: #f5f5f5 url(../img/home.jpg) center/cover no-repeat fixed;
 }
-header div + div.background assets.desktop-maxw-48em {
+header > div + div.background assets.desktop-maxw-48em {
   padding: 2rem 0;
 }
 
@@ -795,7 +807,7 @@ Primary use:    To separate all css declarations based on page
 
 .fastlinks__box {
   padding: 1rem 0.2rem;
-  background: #00c177;
+  background-color: #007045;
   border-radius: 16px;
   border: 2px solid transparent;
 }
@@ -909,7 +921,7 @@ than one section
 */
 .introduction__about-me {
   /* Box model */
-  margin-top: 1rem;
+  margin-top: 0;
   margin-bottom: -40px;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -1053,8 +1065,10 @@ than one section
 
 @media screen and (min-width: 35.5em) {
   .about-me__text {
-    padding: 1rem;
-    border: 20px solid #00c177;
+    margin-top: 0;
+    padding: 2rem;
+    color: #fff;
+    background: #007045;
   }
 }
 @media screen and (min-width: 48em) {
@@ -1062,9 +1076,6 @@ than one section
     margin-left: 2rem;
     padding-right: 2rem;
     padding-left: 2rem;
-  }
-  .about-me__text.darkmode-surface {
-    padding: 2.25rem 3.25rem;
   }
 }
 @media screen and (min-width: 80em) {
@@ -1096,7 +1107,7 @@ than one section
   height: -moz-max-content;
   /* Firefox/Gecko */
   height: max-content;
-  background-color: #00c177;
+  background-color: #007045;
   font-weight: bold !important;
   color: #fff !important;
 }
@@ -1253,7 +1264,7 @@ than one section
   font-size: 2rem;
   border: 2px solid #000;
   border-radius: 12px;
-  background: #00c177;
+  background: #007045;
 }
 .modal__close:focus {
   border: 2px solid #fff;
@@ -1289,20 +1300,20 @@ than one section
 */
 .courses__container,
 .used__container,
-.internship_container {
-  padding: 2rem;
+.internships__section {
+  padding: 1rem;
 }
-@media only screen and (min-width: 48.0625em) {
+@media screen and (min-width: 35.5em) {
   .courses__container,
 .used__container,
-.internship_container {
+.internships__section {
     padding: 2rem;
   }
 }
 @media screen and (min-width: 64em) {
   .courses__container,
 .used__container,
-.internship_container {
+.internships__section {
     padding: 4rem;
   }
 }
@@ -1320,6 +1331,7 @@ than one section
 .used_tools__container > h2,
 .internship__content > h2 {
   margin-bottom: 3rem;
+  color: #fff;
   text-align: center;
   font-weight: 700;
 }
@@ -1331,7 +1343,7 @@ than one section
 
 .used_languages__container,
 .used_tools__container {
-  background-color: #00c177;
+  background-color: #007045;
 }
 
 .languages__row--1,
@@ -1364,7 +1376,7 @@ than one section
 2. Courses
 */
 .courses__container {
-  background: #00c177 0% 0% no-repeat padding-box;
+  background: #007045 0% 0% no-repeat padding-box;
   opacity: 1;
 }
 @media only screen and (min-width: 48.0625em) {
@@ -1448,9 +1460,10 @@ than one section
   }
 }
 .course__content > a {
-  font-family: "Montserrat";
   display: block;
-  text-decoration-thickness: 3px;
+  font-family: "Montserrat", sans-serif;
+  text-decoration-color: black;
+  text-decoration-thickness: 1px;
 }
 .course__content > .course__link {
   font-weight: 700;
@@ -1563,8 +1576,10 @@ than one section
 */
 .internships__section {
   margin-bottom: 4rem;
-  padding: 1rem 2rem;
-  background-color: #00c177;
+  background-color: #007045;
+}
+.internships__section > h2 {
+  color: #fff;
 }
 @media screen and (min-width: 48em) {
   .internships__section {
@@ -1611,6 +1626,9 @@ than one section
   .internship_description > p {
     margin-top: initial;
   }
+}
+.internship_description a {
+  text-decoration-color: #000;
 }
 @media screen and (min-width: 64em) {
   .internship_description {
@@ -1664,7 +1682,20 @@ dd:first-of-type {
 }
 
 .project__container {
-  margin-top: 4rem;
+  margin-top: -40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  max-width: 1350px;
+}
+.project__container + div {
+  margin-top: 40px;
+}
+@media screen and (min-width: 64em) {
+  .project__container {
+    margin-top: initial;
+    padding: 20px;
+  }
 }
 
 .project__col__left,
@@ -1694,7 +1725,7 @@ dd:first-of-type {
 .pulse {
   display: none;
 }
-@media screen and (min-width: 35.5em) {
+@media screen and (min-width: 64em) {
   .pulse {
     position: absolute;
     left: 50%;
@@ -1703,7 +1734,7 @@ dd:first-of-type {
     height: 40px;
     display: inline-block;
     border-radius: 100%;
-    background: #00c177;
+    background: #007045;
     transform: translateX(-50%);
   }
   .pulse::after {
@@ -1711,7 +1742,7 @@ dd:first-of-type {
     width: 100%;
     height: 100%;
     border-radius: inherit;
-    background: #378b37;
+    background: #cdcdcd;
     animation: pulse 3s ease infinite;
     content: "";
   }
@@ -1719,8 +1750,9 @@ dd:first-of-type {
 
 .category__explanation,
 .project__col__right {
-  background: #00c177;
+  background: #007045;
   box-shadow: 10px 10px 10px lightgrey;
+  text-align: center;
 }
 
 .category__explanation.darkmode-cblack,
@@ -1758,6 +1790,9 @@ dd:first-of-type {
   margin-top: -1.5rem;
   padding: 0 1.5rem 1.5rem;
 }
+.logo__container button:focus {
+  border: 4px solid #F8DE7E;
+}
 @media screen and (min-width: 48em) {
   .logo__container {
     display: grid;
@@ -1789,7 +1824,7 @@ dd:first-of-type {
   padding: 1rem;
   display: inline-flex;
   width: 100%;
-  border: 1px solid transparent;
+  border: 4px solid transparent;
   border-radius: 4px;
   align-items: center;
   z-index: 1;
@@ -1827,8 +1862,9 @@ dd:first-of-type {
 .project__explanation {
   display: none;
   padding: 1.5rem;
-  color: initial;
   background: #8daaa8;
+  color: initial;
+  text-align: left;
 }
 .project__explanation p {
   white-space: normal;
@@ -2037,7 +2073,7 @@ Primary use:    To separate all css declarations based on page
 }
 .skip-main-content-container {
   position: relative;
-  background: #00c177;
+  background: #007045;
   z-index: 9;
 }
 .skip-main-content-span {
@@ -2150,6 +2186,40 @@ footer .icon {
 }
 
 /*------------------------------------------------------------------
+[Variables stylesheet]
+Project:    Portfolio
+Version:    1.0
+Assigned to:    Yari Morcus
+Primary use:    Separate all variables into one stylesheet
+-------------------------------------------------------------------*/
+.fastlinks__box, .about-me__info__container, .course__content {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.box-shadow, .courses__container, .internships__section {
+  -webkit-box-shadow: 36px 49px 103px -35px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 36px 49px 103px -35px rgba(0, 0, 0, 0.75);
+  box-shadow: 36px 49px 103px -35px rgba(0, 0, 0, 0.75);
+}
+
+.icons__container > a, .contact .fastlinks__box {
+  display: flex;
+  align-items: center;
+}
+
+.label__fictional::before, .label__customers::before {
+  display: inline-block;
+  margin-right: 0.3rem;
+  width: 20px;
+}
+
+.rounded__photo--caption, .about-me__text, .about-me__info__container, .used_languages__container,
+.used_tools__container,
+.internship__content, .course__item > .course__label, .course__item > .course__content {
+  border-radius: 16px;
+}
+
+/*------------------------------------------------------------------
 [Darkmode CSS]
 Project:    Portfolio
 Version:    1.0
@@ -2169,6 +2239,9 @@ Primary use:    To separate all functions and media queries from other CSS
 }
 .darkmode-bg .skip-main-content-container {
   background: #242424;
+}
+.darkmode-bg .title__container {
+  box-shadow: none;
 }
 .darkmode-03dp {
   background: #242424 !important;
@@ -2268,12 +2341,7 @@ Primary use:    To separate all functions and media queries from other CSS
 }
 
 .about-me__text.darkmode-surface {
-  padding: 1.5rem;
-}
-@media screen and (min-width: 48em) {
-  .about-me__text.darkmode-surface {
-    padding: 2.25rem 3.25rem;
-  }
+  border: none;
 }
 
 .self__education .darkmode-titles {

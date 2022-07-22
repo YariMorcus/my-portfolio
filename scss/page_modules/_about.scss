@@ -33,7 +33,7 @@ than one section
 
 .introduction__about-me {
     /* Box model */
-    margin-top: 1rem;
+    margin-top: 0;
     margin-bottom: -40px;
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -200,18 +200,16 @@ than one section
     @extend %border-radius-16;
 
     @include desktop-minw-35em {
-        padding: 1rem;
-        border: 20px solid $main-background-color;
+        margin-top: 0;
+        padding: 2rem;
+        color: $white;
+        background: $main-background-color;
     }
 
     @include desktop-minw-48em {
         margin-left: 2rem;
         padding-right: 2rem;
         padding-left: 2rem;
-
-        &.darkmode-surface {
-            padding: 2.25rem 3.25rem;
-        }
     }
 
     @include desktop-minw-80em {

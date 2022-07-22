@@ -12,14 +12,15 @@ Version:    1.0
 Assigned to:    Yari Morcus
 Primary use:    To separate all header css declarations based on component
 -------------------------------------------------------------------*/
-header div {
+header > div {
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 10px 15px 5px rgba(119, 118, 118, 0.69);
 }
-header div + div.background {
+header > div + div.background {
   padding: 1rem;
   background: #f5f5f5 url(../img/home.jpg) center/cover no-repeat fixed;
 }
-header div + div.background assets.desktop-maxw-48em {
+header > div + div.background assets.desktop-maxw-48em {
   padding: 2rem 0;
 }

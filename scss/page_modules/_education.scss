@@ -23,12 +23,16 @@ than one section
 
 .courses__container,
 .used__container,
-.internship_container {
-    padding: 2rem;
+.internships__section {
+    padding: 1rem;
 
-    @include desktop-minw-49em {
+    @include desktop-minw-35em {
         padding: 2rem;
     }
+
+    // @include desktop-minw-49em {
+    //     padding: 2rem;
+    // }
 
     @include desktop-minw-64em {
         padding: 4rem;
@@ -47,6 +51,7 @@ than one section
 
     & > h2 {
         margin-bottom: 3rem;
+        color: $white;
         text-align: center;
         font-weight: 700;
     }
@@ -180,9 +185,10 @@ than one section
     }
 
     & > a {
-        font-family: "Montserrat";
         display: block;
-        text-decoration-thickness: 3px;
+        font-family: "Montserrat", sans-serif;
+        text-decoration-color: black;
+        text-decoration-thickness: 1px;
     }
 
     & > .course__link {
@@ -305,9 +311,12 @@ than one section
 
 .internships__section {
     margin-bottom: 4rem;
-    padding: 1rem 2rem;
     @extend %box__shadow--large;
     background-color: $main-background-color;
+
+    > h2 {
+        color: $white;
+    }
 
     @include desktop-minw-48em {
         padding: 3rem;
@@ -354,6 +363,10 @@ than one section
         @include desktop-minw-64em {
             margin-top: initial;
         }
+    }
+
+    a {
+        text-decoration-color: #000;
     }
 
     @include desktop-minw-64em {

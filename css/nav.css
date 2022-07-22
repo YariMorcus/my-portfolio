@@ -60,7 +60,7 @@ Primary use:    To separate all navigation css declarations based on component
   -moz-transition: height 0.5s;
   -ms-transition: height 0.5s;
   transition: height 0.5s;
-  background: #00c177;
+  background-color: #fff;
   box-shadow: 0px 1px 10px 0px lightgrey;
 }
 #menu .pure-menu-heading {
@@ -99,10 +99,13 @@ Primary use:    To separate all navigation css declarations based on component
   position: relative;
   font-weight: 600;
   border-radius: 12px;
-  background: #fff;
+  background-color: #007045;
 }
 #menu .pure-menu .pure-menu-list .active > a {
-  color: #000;
+  color: #fff;
+}
+#menu .pure-menu .pure-menu-list .active > a:hover {
+  background-color: initial;
 }
 #menu .pure-menu .pure-menu-link {
   color: #000;
@@ -121,6 +124,12 @@ Primary use:    To separate all navigation css declarations based on component
   #menu .pure-menu .pure-menu-link {
     padding: 0.8rem;
   }
+}
+#menu .pure-menu .pure-menu-link:hover {
+  background-color: #cdcdcd;
+}
+#menu .pure-menu .pure-menu-link.darkmode-menu-link:hover {
+  background-color: #808080;
 }
 #menu .link-menu {
   margin-top: 1rem;
@@ -148,6 +157,7 @@ Primary use:    To separate all navigation css declarations based on component
 .pure-menu-item.active > .pure-menu-link:hover,
 .pure-menu-item.active > .pure-menu-link:focus {
   border-radius: 12px;
+  background-color: initial;
 }
 @media screen and (min-width: 48em) {
   .pure-menu-item.active > .pure-menu-link:hover,
@@ -167,6 +177,7 @@ Primary use:    To separate all navigation css declarations based on component
 
 .darkmode-bg .pure-menu-link:focus {
   background-color: initial !important;
+  border-radius: 12px;
 }
 
 /*------------------------------------------------------------------
@@ -179,7 +190,7 @@ Primary use:    To separate all navigation css declarations based on component
   display: none;
   width: 57px;
   height: 50px;
-  background: #007045;
+  background-color: #007045;
   border-radius: 4px;
 }
 .custom-toggle .bar {
