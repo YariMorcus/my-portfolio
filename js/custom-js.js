@@ -50,7 +50,10 @@ const cookieHandler = (function cookieHandler() {
 
 const darkmodeDATA = function darkmodeDATA() {
 const DOM = {
-  "darkmode-bg": ["body"],
+  "darkmode-bg": [
+    "body", 
+    "introduction__about-me"
+  ],
   "darkmode-surface": [
     "introduction",
     "container",
@@ -81,9 +84,7 @@ const DOM = {
   ],
   "darkmode-menu-link": ["pure-menu-link"],
   "darkmode-primary": [
-    "fastlinks__box",
-    "pure-menu-item active",
-    "link",
+    "link"
   ],
   "darkmode-titles": ["h1", "h2"],
   "darkmode-cwhite": [
@@ -150,7 +151,7 @@ const darkmode = (function darkmode(DmData) {
 
   // Object contains the darkmode and non-darkmode variants
   const componentVariants = {
-    SiteLogo: ["img/logo.svg", "img/logo.svg"],
+    SiteLogo: ["img/logo.svg", "img/logo-dark.svg"],
     GitHubLogo: [
       "img/icon/github-logo-white.svg",
       "img/icon/github-logo-white.png",
@@ -210,8 +211,8 @@ const darkmode = (function darkmode(DmData) {
 
       const siteLogo = document.querySelector(".logo");
       mode
-        ? (siteLogo.src = componentVariants.SiteLogo[0])
-        : (siteLogo.src = componentVariants.SiteLogo[1]);
+        ? (siteLogo.data = componentVariants.SiteLogo[0])
+        : (siteLogo.data = componentVariants.SiteLogo[1]);
     }
     if (type === "linkedin") {
 

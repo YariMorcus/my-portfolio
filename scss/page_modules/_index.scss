@@ -122,7 +122,7 @@ Primary use:    To separate all css declarations based on page
 
 .fastlinks__box {
     padding: 1rem .2rem;
-    background: $main-background-color;
+    background-color: $main-background-color;
     border-radius: 16px;
     border: 2px solid transparent;
     @extend %box__shadow;
@@ -169,7 +169,6 @@ Primary use:    To separate all css declarations based on page
         margin-bottom: 2rem;
     }
 }
-
 
 .fastlinks__imgbox {
     display: flex;

@@ -8,16 +8,20 @@ Primary use:    To separate all header css declarations based on component
 
 @use 'assets' as *;
 
-header div {
-  justify-content: center;
-  align-items: center;
-
-  & + div.background {
-    padding: 1rem;
-    background: #f5f5f5 url(../img/home.jpg) center/cover no-repeat fixed;
-
-    assets.desktop-maxw-48em {
-      padding: 2rem 0;
+header {
+  
+  > div {
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 10px 15px 5px rgba(119, 118, 118, 0.69);
+  
+    & + div.background {
+      padding: 1rem;
+      background: #f5f5f5 url(../img/home.jpg) center/cover no-repeat fixed;
+  
+      assets.desktop-maxw-48em {
+        padding: 2rem 0;
+      }
     }
   }
 }

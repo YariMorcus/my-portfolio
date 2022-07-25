@@ -6,6 +6,7 @@ Assigned to:    Yari Morcus
 Primary use:    To separate all darkmode css declarations
 -------------------------------------------------------------------*/
 
+@use "variables" as *;
 @import 'assets';
 
 .darkmode {
@@ -15,6 +16,10 @@ Primary use:    To separate all darkmode css declarations
 
         & .skip-main-content-container {
             background: #242424;
+        }
+
+        .title__container {
+            box-shadow: none;
         }
     }
 
@@ -121,7 +126,7 @@ Primary use:    To separate all darkmode css declarations
     padding: .5rem;
     color: #dedede;
     font-size: 1.5rem;
-    background: #007045;
+    background: $main-background-color;
     width: 41px;
     height: 56px;
     border: 1px solid transparent;
@@ -138,11 +143,7 @@ Primary use:    To separate all darkmode css declarations
 }
 
 .about-me__text.darkmode-surface {
-    padding: 1.5rem;
-
-    @include desktop-minw-48em {
-        padding: 2.25rem 3.25rem;
-    }
+    border: none;
 }
 
 .self__education .darkmode-titles {
